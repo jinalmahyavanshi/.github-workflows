@@ -1,0 +1,29 @@
+name: Custom Build Workflow
+on:
+  push:
+    branches:
+      - main  # Replace with your desired branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Replace with the desired operating system
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Add your build steps here
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # Add additional steps as needed
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: built-artifact
+          path: ./path/to/artifact  # Replace with the path to your built artifact
+
