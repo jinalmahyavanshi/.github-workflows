@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Replace with the desired operating system
+    runs-on: windows-latest  # Replace with the desired operating system
 
     steps:
       - name: Checkout repository
